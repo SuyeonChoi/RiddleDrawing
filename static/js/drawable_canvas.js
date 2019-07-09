@@ -50,17 +50,29 @@
         canvas.setWidth(width);
     }
 
-    // const event = {
-    //     mouse: {
-    //         down: mouseDownHandler,
-    //         up: mouseUpHandler,
-    //         move: mouseMoveHandler
-    //     }
-    // }
+    function mouseDownHandler(handler){
+        canvas.on('mouse:down', handler);
+    }
+
+    function mouseUpHandler(handler){
+        canvas.on('mouse:up', handler);
+    }
+
+    function mouseMoveHandler(handler){
+        canvas.on('mouse:move', handler);
+    }
+    
+    const event = {
+        mouse: {
+            down: mouseDownHandler,
+            up: mouseUpHandler,
+            move: mouseMoveHandler
+        }
+    }
 
     const drawableCanvas = {
         initialize: initialize,
-        // event: event,
+        event: event,
         setDrawingMode: setDrawingMode,
         setBackgroundColor: setBackgroundColor,
         setBrushWidth: setBrushWidth,
