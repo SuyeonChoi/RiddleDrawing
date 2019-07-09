@@ -11,6 +11,22 @@
 
     }
 
+    function isDrawingMode(isDrawable){
+        
+    }
+
+    function setBackgroundColor(color){
+
+    }
+
+    function setBrushWidth(width){
+
+    }
+
+    function setBrushColor(color){
+
+    }
+
     const event = {
         mouse: {
             down: mouseDownHandler,
@@ -18,9 +34,14 @@
             move: mouseMoveHandler
         }
     }
+
     const drawableCanvas = {
         initialize: initialize,
-        event: event
+        event: event,
+        isDrawingMode: isDrawingMode,
+        setBackgroundColor: setBackgroundColor,
+        setBrushWidth: setBrushWidth,
+        setBrushColor: setBrushColor
     };
 
     if (typeof define === 'function' && define.amd) {
