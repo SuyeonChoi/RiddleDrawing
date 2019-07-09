@@ -17,8 +17,6 @@
         setWidth(300);
         setHeight(300);
         canvas.renderAll();
-        
-        canvas.freeDrawingBrush.width = 10;
     }
 
     function setDrawingMode(isDrawable){
@@ -50,6 +48,10 @@
         canvas.setWidth(width);
     }
 
+    function clear(){
+        canvas.clear();
+    }
+
     function mouseDownHandler(handler){
         canvas.on('mouse:down', handler);
     }
@@ -61,7 +63,7 @@
     function mouseMoveHandler(handler){
         canvas.on('mouse:move', handler);
     }
-    
+
     const event = {
         mouse: {
             down: mouseDownHandler,
@@ -76,7 +78,8 @@
         setDrawingMode: setDrawingMode,
         setBackgroundColor: setBackgroundColor,
         setBrushWidth: setBrushWidth,
-        setBrushColor: setBrushColor
+        setBrushColor: setBrushColor,
+        clear: clear
     };
 
     if (typeof define === 'function' && define.amd) {
