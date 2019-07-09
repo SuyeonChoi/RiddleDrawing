@@ -14,6 +14,8 @@
         setBrushColor('#000000');
         setBrushWidth(10);
         setDrawingMode(true);
+        setWidth(300);
+        setHeight(300);
         canvas.renderAll();
         
         canvas.freeDrawingBrush.width = 10;
@@ -29,6 +31,7 @@
 
     function setBackgroundColor(color){
         canvas.backgroundColor = color;
+        canvas.renderAll();
     }
 
     function setBrushWidth(width){
@@ -37,6 +40,14 @@
 
     function setBrushColor(color){
         canvas.freeDrawingBrush.color = color;
+    }
+
+    function setHeight(height){
+        canvas.setHeight(height);
+    }
+
+    function setWidth(width){
+        canvas.setWidth(width);
     }
 
     // const event = {
