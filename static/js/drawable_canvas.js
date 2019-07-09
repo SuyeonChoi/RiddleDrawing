@@ -6,39 +6,51 @@
  * under the MIT license.
  */
 (function() {
+    let canvas;
 
     function initialize(id){
-
-    }
-
-    function isDrawingMode(isDrawable){
+        canvas = window._canvas = new fabric.Canvas(id);
+        setBackgroundColor('#ffffff');
+        setBrushColor('#000000');
+        setBrushWidth(10);
+        setDrawingMode(true);
+        canvas.renderAll();
         
+        canvas.freeDrawingBrush.width = 10;
     }
 
-    function setBackgroundColor(color){
-
-    }
-
-    function setBrushWidth(width){
-
-    }
-
-    function setBrushColor(color){
-
-    }
-
-    const event = {
-        mouse: {
-            down: mouseDownHandler,
-            up: mouseUpHandler,
-            move: mouseMoveHandler
+    function setDrawingMode(isDrawable){
+        if(isDrawable){
+            canvas.isDrawingMode = 1;
+        }else{
+            canvas.isDrawingMode = 0;
         }
     }
 
+    function setBackgroundColor(color){
+        canvas.backgroundColor = color;
+    }
+
+    function setBrushWidth(width){
+        canvas.freeDrawingBrush.width = width;
+    }
+
+    function setBrushColor(color){
+        canvas.freeDrawingBrush.color = color;
+    }
+
+    // const event = {
+    //     mouse: {
+    //         down: mouseDownHandler,
+    //         up: mouseUpHandler,
+    //         move: mouseMoveHandler
+    //     }
+    // }
+
     const drawableCanvas = {
         initialize: initialize,
-        event: event,
-        isDrawingMode: isDrawingMode,
+        // event: event,
+        setDrawingMode: setDrawingMode,
         setBackgroundColor: setBackgroundColor,
         setBrushWidth: setBrushWidth,
         setBrushColor: setBrushColor
