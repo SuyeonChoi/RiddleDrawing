@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type ="text/css">
+  html,body{height:100%}
+#background{
+  width:100%;
+  height:100%;
+  margin:0 auto;
+  position: relative;
+  background-image:url('background.jpg');
+}
+#main{
+  width:90%;
+  height:80%;
+  background-color: #bcbcbc;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#div_top{
+  width:100%;
+  height:22%;
+  background-color:white;
+  margin: 0 auto;
+  text-align:center;
+  line-height: 300%;
+  font-size:40px;
+  font-family :Bradley Hand ITC, "GodoB", "굴림";
+  font-weight: bold;
+}
+.div_menu{
+  width:48.5%;
+  height:75%;
+  background-color:white;
+  float:left;
+  margin:8px;
+  position: relative;
+  text-align: center;
+  font:italic  20px  Bradley Hand ITC;
+}
+span{
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-40%, -45%);
+  width:350px;
+}
+.underlinetext:after{
+  content: "";
+  display: block;
+  width: 250px;
+  border-bottom: 4px solid #bcbcbc;
+  margin: 0px auto;
+}
+.underlinetext{
+  font-weight: bold;
+  font-size: 30px;
+}
+p{
+  margin:10;
+}
+</style>
+</head>
+<body>
+   <div id="background">
+      <div id = "main">
+        <div id="div_top">Riddle Drawing</div>
+        <div class="div_menu">
+          <span>
+          <img src="alarm.PNG" width="120px">
+          <p class="underlinetext">Speed Draw</p>
+          <p>Guess what AI draws!</p>
+          </span>
+          </div>
+        <div class="div_menu">
+          <span>
+          <img src="guess.PNG" width="120px">
+          <p class="underlinetext">Speed Draw</p>
+          <p>Complete 3 drawings in 60 seconds!</p>
+          </span>
+        </div>
+      </div>
+   </div>
+</body>
+</html>
