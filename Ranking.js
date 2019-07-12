@@ -26,6 +26,7 @@ btn.onclick = function popRankBox(){
   close.style.float = "right";
   close.style.fontSize = "28px";
   close.style.fontWeight = "bold";
+  close.style.overflow = "auto";
   close.onmouseover = function mouseOver(){
     close.style.color = "rgba(0,0,0,0.5)";
     close.style.cursor = "pointer";
@@ -34,10 +35,17 @@ btn.onclick = function popRankBox(){
     close.style.color = "black";
   }
 
+  modal_content.appendChild(close);
+  modal_backgroud.appendChild(modal_content);
+
   close.onclick = function(){
     modal_backgroud.removeChild(modal_content);
   }
 
-  modal_content.appendChild(close);
-  modal_backgroud.appendChild(modal_content);
+  window.onclick = function(event){
+    if(event.target == modal_backgroud){
+      modal_backgroud.removeChild(modal_content);
+    }
+  }
+
 }
