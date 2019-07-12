@@ -27,6 +27,14 @@ btn.onclick = function popRankBox(){
   close.style.fontSize = "28px";
   close.style.fontWeight = "bold";
 
+  close.onmouseover = function mouseOver(){
+    close.style.color = "#000";
+    close.style.cursor = "pointer";
+  }
+  close.onmouseout = function mouseOut(){
+    close.style.color = "#aaaaaa";
+  }
+
   modal_content.appendChild(close);
   modal_backgroud.appendChild(modal_content);
 }
