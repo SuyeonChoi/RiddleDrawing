@@ -2,6 +2,23 @@
 var btn = document.getElementById("openRank");
 
 btn.onclick = function popRankBox(){
+  //추후에 form태그에서 받아오기
+  var name = "suyeonchoi";
+  var score = 234;
+  //추후에 firebase에서 데이터 불러오기
+  var data = new Object();
+  data = {first:500, second:400, third:300, fourth:200, fifth:100, sixth: 0};
+  //새로운 값 배열에 삽입 후 정렬
+  data.name = score;
+
+  var sortable = [];
+  for(var person in data){
+    sortable.push([person, data[person]]);
+  }
+  sortable.sort(function(a,b){
+    return b[1] - a[1];
+  })
+
   var modal_backgroud = document.body;
   modal_backgroud.style.display = "block";
   modal_backgroud.style.position = "fixed";
@@ -50,13 +67,41 @@ btn.onclick = function popRankBox(){
   ranking.style.left = "20px";
 
   var point = document.createElement("span");
-  point.innerHTML = "point";
+  point.innerHTML = "points";
   point.style.position = "absolute";
   point.style.top = "15px";
   point.style.right = "30px";
 
+  //데이터 예제(top5보여주기)
+  //var keys = Object.keys(data);
+
+  if(sortable.length != 0){
+    var table = document.createElement("TABLE");
+    table.style.position= "absolute";
+    table.style.top = "40px";
+    table.style.width = "100%"
+    for(var i=0; i<5; i++){ //i는 순위 표기 변수
+      var tr = document.createElement("TR");
+      var td = document.createElement("TD");
+      td.style.padding = "15px";
+      td.innerHTML = i+1;
+      tr.appendChild(td);
+      var td1 = document.createElement("TD");
+      td1.style.padding = "15px";
+      td1.innerHTML = sortable[i][0];
+      tr.appendChild(td1);
+      var td2 = document.createElement("TD");
+      td2.style.padding = "15px";
+      td2.style.textAlign = "right";
+      td2.innerHTML = sortable[i][1];
+      tr.appendChild(td2);
+      table.appendChild(tr);
+    }
+  }
+
   ranktable.appendChild(ranking);
   ranktable.appendChild(point);
+  ranktable.appendChild(table);
 
   modal_content.appendChild(close);
   modal_content.appendChild(ranktable);
