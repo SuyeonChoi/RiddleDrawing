@@ -56,6 +56,7 @@ btn.onclick = function popRankBox(){
   close.onmouseout = function mouseOut(){
     close.style.color = "black";
   }
+
 /*
   var ranktable = document.createElement("div");
   ranktable.setAttribute("class","ranktable")
@@ -69,13 +70,12 @@ btn.onclick = function popRankBox(){
   ranking.style.position = "absolute";
   ranking.style.left = "20px";
 
-
-
   var point = document.createElement("span");
   point.innerHTML = "points";
   point.style.position = "absolute";
   point.style.top = "15px";
   point.style.right = "30px";
+
 */
   //데이터 예제(top5보여주기)
   if(sortable.length != 0){
