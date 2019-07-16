@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <style type ="text/css">
+    html,body{
+      height:100%;
+      font:italic  25px  Bradley Hand ITC;
+    }
+    #top{
+      width:100%;
+      height:15%;
+      margin:0 auto;
+      padding-left:30px;
+    }
+    #main_back{
+      width:100%;
+      height:80%;
+      position: relative;
+      margin:0 auto;
+    }
+    #main{
+      width:45%;
+      height:100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin:0 auto;
+    }
+    #drawing_picture_text{
+      text-align:center;
+    }
+    #drawing_picture{
+      width:100%;
+      height:65%;
+      border: 2px solid;
+    }
+    #select_answer{
+      width:100%;
+      height:20%;
+    }
+    .point{
+      float:right;
+    }
+    p{
+      font-size:40px;
+      margin:0 auto;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="top">
+    <p>Speed Draw</p>
+    complete drawings in 60 seconds!
+  </div>
+  <div id="main_back">
+    <div id="main">
+      <div id="drawing_picture_text">Draw snow</div>
+      <canvas id="drawing_picture"></canvas>
+      <div id="select_answer">
+        <ol>
+          <li>
+            <span class="answer">snow</span>
+            <span class="point">+20</span>
+          </li>
+          <li>
+            <span class="answer">rain</span>
+            <span class="point">+20</span>
+          </li>
+          <li>
+            <span class="answer">cloud</span>
+            <span class="point">+20</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
