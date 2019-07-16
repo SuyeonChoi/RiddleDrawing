@@ -10,7 +10,7 @@ function popupRankBox(data){
   rankingModal.innerHTML = '<table id="ranking-table"><thead><tr><th colspan="2">ranking</th><th>point</th></tr></thead><tbody></tbody></table>'
   
   let tbody = rankingModal.querySelector('tbody');
-  const sortedData = sortRankData(data).splice(0, 10);
+  const sortedData = sortRankData(data);
   
   for(index in sortedData){
       appendRankingInTable(Number(index)+1, sortedData[index], tbody);
@@ -75,7 +75,7 @@ function getRandomData(){
   }
 
   let randomData = new Object();
-  for(var i = 0; i<10+Math.floor(Math.random() * 17); i++){
+  for(var i = 0; i<10+Math.floor(Math.random() * 37); i++){
       randomData[randomString()] = randomScore();
   }
   return randomData;
