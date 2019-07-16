@@ -1,0 +1,76 @@
+html,body{
+    height:100%;
+    font-family: 'Dancing Script', cursive;
+}
+
+#background{
+    width:100%;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+    background-image:url('../img/background.jpg');
+}
+
+#main{
+    min-width: 900px;
+    width:90%;
+    height:80%;
+    box-shadow: 0px 0px 7px 7px grey;
+    background-color: white;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#div_top{
+    width:100%;
+    height:22%;
+    background-color:white;
+    margin: 0 auto;
+    text-align:center;
+    line-height: 300%;
+    font-size:80px;
+    /* font-family :Bradley Hand ITC, "GodoB", "굴림"; */
+    font-weight: bold;
+}
+
+.div_menu{
+    width:48%;
+    height:75%;
+    background-color:white;
+    float:left;
+    margin:8px;
+    position: relative;
+    text-align: center;
+    /* font:italic  20px  Bradley Hand ITC; */
+}
+
+span{
+    border-radius: 5%;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-40%, -45%);
+    width:350px;
+    box-shadow: 3px 3px 10px 5px grey;
+    padding: 30px 0px;
+}
+
+.underlinetext:after{
+    content: "";
+    display: block;
+    width: 250px;
+    border-bottom: 4px solid #bcbcbc;
+    margin: 0px auto;
+}
+
+.underlinetext{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+p{
+    margin:10;
+}
