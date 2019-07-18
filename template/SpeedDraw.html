@@ -4,81 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.4/fabric.min.js"></script>
+  <script src="../static/js/drawable_canvas.js"></script>
   <title>Document</title>
-  <style type ="text/css">
-    html,body{
-      height:100%;
-      font:italic  25px  Bradley Hand ITC;
-    }
-    #top{
-      width:100%;
-      height:15%;
-      margin:0 auto;
-      padding-left:30px;
-    }
-    #main_back{
-      width:100%;
-      height:80%;
-      position: relative;
-      margin:0 auto;
-    }
-    #main{
-      width:45%;
-      height:100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin:0 auto;
-    }
-    #drawing_picture_text{
-      text-align:center;
-    }
-    #drawing_picture{
-      width:100%;
-      height:65%;
-      border: 2px solid;
-    }
-    #select_answer{
-      width:100%;
-      height:20%;
-    }
-    .point{
-      float:right;
-    }
-    p{
-      font-size:40px;
-      margin:0 auto;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="../static/css/speed.css">
 </head>
 <body>
-  <div id="top">
-    <p>Speed Draw</p>
-    complete drawings in 60 seconds!
-  </div>
-  <div id="main_back">
+  <div id="background">
     <div id="main">
-      <div id="drawing_picture_text">Draw snow</div>
-      <canvas id="drawing_picture"></canvas>
-      <div id="select_answer">
-        <ol>
-          <li>
-            <span class="answer">snow</span>
-            <span class="point">+20</span>
-          </li>
-          <li>
-            <span class="answer">rain</span>
-            <span class="point">+20</span>
-          </li>
-          <li>
-            <span class="answer">cloud</span>
-            <span class="point">+20</span>
-          </li>
-        </ol>
+      <div id="top">
+        <div id="logo">
+            <p id="name">Speed Draw</p>
+            <p id="explain">Complete drawings in 60 seconds!</p>
+        </div>
+        <div id="timer">60</div>
+        <div id="point-wrapper">
+            <p id="score">Total Score : 320 points</p>
+        </div>
+      </div>
+      <div id="draw-wrapper">
+        <div id="question">Draw <span>snow</span><div id="clear-btn"><i class="fas fa-undo-alt"></i></div></div>
+        <canvas id="drawable-canvas"></canvas>
+
+        <div id="answer-wrapper">
+          <div class="answer"><span class="answer-text">1. bird</span><span class="answer-point">+ 20</span></div>
+          <div class="answer"><span class="answer-text">2. cloud</span><span class="answer-point">+ 10</span></div>
+          <div class="answer"><span class="answer-text">3. building</span><span class="answer-point">+ 5</span></div>
+        </div>
+      </div>
+      <div id="out-btn">
+        <i class="fas fa-sign-out-alt"></i>
       </div>
     </div>
   </div>
+  <script src="../static/js/speed.js"></script>
 </body>
 </html>

@@ -8,14 +8,14 @@
 (function() {
     let canvas;
 
-    function initialize(id){
+    function initialize(id, width, height){
         canvas = window._canvas = new fabric.Canvas(id);
         setBackgroundColor('#ffffff');
         setBrushColor('#000000');
         setBrushWidth(10);
         setDrawingMode(true);
-        setWidth(300);
-        setHeight(300);
+        setWidth(width);
+        setHeight(height);
         canvas.renderAll();
     }
 
