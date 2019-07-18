@@ -4,18 +4,17 @@ function popupRankBox(data){
     return;
   }
   
-  let rankingModal = document.createElement('div');
-  rankingModal.id = 'ranking-modal';
-  rankingModal.style.display = 'none';
-  rankingModal.innerHTML = '<table id="ranking-table"><thead><tr><th colspan="2">ranking</th><th>point</th></tr></thead><tbody></tbody></table>'
+  let rankingBackground = document.createElement('div');
+  rankingBackground.id = 'ranking-background';
+  rankingBackground.innerHTML = '<div id="ranking-wrapper" style="display:none"><div id="ranking-modal"><table id="ranking-table"><thead><tr><th colspan="2">ranking</th><th>point</th></tr></thead><tbody></tbody></table></div><div id="retry-btn">RETRY</div><div id="exit-btn">EXIT</div></div>'
   
-  let tbody = rankingModal.querySelector('tbody');
+  let tbody = rankingBackground.querySelector('tbody');
   const sortedData = sortRankData(data);
   
   for(index in sortedData){
       appendRankingInTable(Number(index)+1, sortedData[index], tbody);
   }
-  document.body.appendChild(rankingModal);
+  document.body.appendChild(rankingBackground);
   switchRankinModal();
 }
 function appendRankingInTable(rank, data, tbody){
@@ -35,13 +34,13 @@ function appendRankingInTable(rank, data, tbody){
   tbody.appendChild(tr)
 }
 function switchRankinModal(){
-  let rankingModal = document.querySelector('#ranking-modal');
-  if(rankingModal.style.display === 'none'){
-      document.querySelector('#ranking-modal').style.display = 'block';
-      document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+  let rankingWrapper = document.querySelector('#ranking-wrapper');
+  if(rankingWrapper.style.display === 'none'){
+    rankingWrapper.style.display = 'block';
+      document.querySelector("#ranking-background").style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
   } else{
-      document.querySelector('#ranking-modal').style.display = 'none';
-      document.body.style.backgroundColor = 'unset';
+      rankingWrapper.style.display = 'none';
+      document.querySelector("#ranking-background").style.backgroundColor = 'unset';
   }
   
 }
