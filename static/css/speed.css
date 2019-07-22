@@ -73,7 +73,7 @@ p{
 }
 
 #point-wrapper{
-    display: inline-block;    
+    display: inline-block;
     position: absolute;
     top: 20px;
     right: 30px;
@@ -122,4 +122,35 @@ p{
 #clear-btn:hover{
     box-shadow: 0px 0px 10px 3px grey;
     cursor: pointer;
+}
+
+#game-level{
+  margin: 20px auto;
+  word-spacing :10px;
+  font-size: 30px;
+  font-family: 'Acme', sans-serif;
+}
+
+.now-level{
+  display: inline-block;
+}
+
+#ai_canvas{
+  width:400px;
+  height:400px;
+  box-shadow: 0px 0px 5px 10px grey;
+  margin: 20px auto;
+}
+
+#answer:after{
+  content: "";
+  display: block;
+  width: 250px;
+  border-bottom: 3px solid black;
+  margin: 10px auto;
+}
+
+#answer{
+  font-family: 'Acme', sans-serif;
+  font-size: 30px;
 }
