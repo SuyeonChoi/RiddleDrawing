@@ -154,3 +154,15 @@ p{
   font-family: 'Acme', sans-serif;
   font-size: 30px;
 }
+
+#input-answer{
+    border: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 30px;
+    width: 250px;
+    text-align: center;
+}
+
+#input-answer:focus{
+    outline: none;
+}
