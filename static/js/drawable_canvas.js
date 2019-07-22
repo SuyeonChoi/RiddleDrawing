@@ -92,3 +92,13 @@
         window.drawableCanvas = drawableCanvas;
     }
 })();
+
+function Timer(timeleft, timetotal, $element){
+  $element.html(timeleft%60);
+  if(timeleft > 0) {
+      setTimeout(function() {
+          Timer(timeleft - 1, timetotal, $element);
+      }, 1000);
+    }
+};
+Timer(document.getElementById("timer"),document.getElementById("timer"),$('#time'));

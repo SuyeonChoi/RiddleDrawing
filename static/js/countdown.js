@@ -42,7 +42,7 @@ function progress(timeleft, timetotal, $element) {
         }, 1000);
     }
 };
-progress(10, 10, $('#progressBar'));
+progress("10", "10", $('#progressBar'));
 
 
 //원그래프 CountDown
