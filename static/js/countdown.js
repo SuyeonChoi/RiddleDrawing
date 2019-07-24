@@ -28,7 +28,7 @@ function Timer(timeleft, timetotal, $element){
       }, 1000);
     }
 };
-Timer(10,10,$('#time'));
+Timer(60,60,$('#time'));
 
 
 
@@ -42,7 +42,7 @@ function progress(timeleft, timetotal, $element) {
         }, 1000);
     }
 };
-progress("10", "10", $('#progressBar'));
+progress("60", "60", $('#progressBar'));
 
 
 //원그래프 CountDown

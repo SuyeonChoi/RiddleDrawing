@@ -48,6 +48,10 @@
         canvas.setWidth(width);
     }
 
+    function getCanvas(){
+        return canvas;
+    }
+
     function clear(){
         canvas.clear();
     }
@@ -79,6 +83,7 @@
         setBackgroundColor: setBackgroundColor,
         setBrushWidth: setBrushWidth,
         setBrushColor: setBrushColor,
+        getCanvas: getCanvas,
         clear: clear
     };
 
