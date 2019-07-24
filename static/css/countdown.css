@@ -9,7 +9,11 @@
   height: 100%;
   text-align: right;
   padding: 0 10px;
+<<<<<<< HEAD
   line-height: 22px; 
+=======
+  line-height: 22px;
+>>>>>>> 74f48c0df1785cab06bc8b7fd5e38239b529cc60
   width: 0;
   background-color: Grey;
   box-sizing: border-box;
