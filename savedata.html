@@ -33,18 +33,27 @@
    }
   */
 
-// 데이터 가져오기
-  var dataRef=firebase.database().ref('users/');
-  var user={};
-    dataRef.on('child_added',on_child_added);
-    function on_child_added(data){
-      var name=data.key;
-      var dataRef2=firebase.database().ref('users/' + data.key);
-      dataRef2.on('child_added',function(data){
-        var scoredata=data.val();
-        user[name]=Number(scoredata);
+////// 데이터 가져오기
+   var dataRef=firebase.database().ref('users/');
+   var user={};
+
+    function getData(callbackFunc) {
+      return new Promise(function (resolve, reject) {
+      dataRef.on('child_added',  function (data) {
+       var name=data.key;
+       dataRef2=firebase.database().ref('users/' + name);
+          dataRef2.on('child_added',function(data){
+          var scoredata=data.val();
+          user[name]=Number(scoredata);
+          resolve(user);
+        });
+      });
       });
     }
+    getData().then(function (user) {
+      console.log(user);
+    });
+
 
   function upload(name,score){
     var dataRef=firebase.database().ref('users/' + name);
