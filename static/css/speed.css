@@ -170,3 +170,7 @@ p{
 .modal-title{
    font-size: 100px;
 }
+
+.modal-content:hover{
+  cursor: pointer;
+}

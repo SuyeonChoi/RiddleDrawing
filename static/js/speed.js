@@ -15,8 +15,8 @@ window.onload = function(){
     window.drawableCanvas.event.mouse.move(mouseMovePorcess);
 
     $("#startModal").modal();
-    
-    $('#startModal').on("click", function(){
+
+    $('#startGame').on("click", function(){
       $("#startModal").modal("hide");
       Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
     });
