@@ -14,6 +14,13 @@ window.onload = function(){
     window.drawableCanvas.event.mouse.down(mouseDownProcess);
     window.drawableCanvas.event.mouse.move(mouseMovePorcess);
 
+    $("#startModal").modal();
+    
+    $('#startModal').on("click", function(){
+      $("#startModal").modal("hide");
+      Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
+    });
+
     function Timer(timeleft, timetotal, $element, callback){
         $element.html(timeleft%61);
         if(timeleft > 0) {
@@ -27,8 +34,6 @@ window.onload = function(){
           },1000);
         }
     };
-
-    Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
 
     function timeover(){
       window.alert("Time Over!");

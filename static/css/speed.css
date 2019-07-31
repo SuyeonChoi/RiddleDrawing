@@ -166,3 +166,7 @@ p{
 #input-answer:focus{
     outline: none;
 }
+
+.modal-title{
+   font-size: 100px;
+}
