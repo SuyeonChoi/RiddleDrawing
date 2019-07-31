@@ -27,7 +27,7 @@
             <p id="name">Speed Draw</p>
             <p id="explain">Complete drawings in 60 seconds!</p>
         </div>
-        <div id="timer">60</div>
+        <div id="timer">2</div>
         <div id="point-wrapper">
             <p id="score">Total Score : 320 points</p>
         </div>
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <!-- The Modal -->
+    <!-- Start Modal -->
     <div class="modal fade" id="startModal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" id="startGame">
@@ -59,6 +59,30 @@
          <div class="modal-body">
           <h4 class="modal-title text-center">START</h4>
          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Modal -->
+    <div class="modal fade" id="endModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="total-score text-center">Total Score<br>320</h4>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body text-center">
+            Input your name : <br>
+            <input type="text" id="user-name">
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <div class="container text-center">
+              <button type="button" class="btn btn-primary btn-lg mr-4" data-dismiss="modal">SAVE</button>
+              <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">EXIT</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

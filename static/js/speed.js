@@ -37,6 +37,7 @@ window.onload = function(){
 
     function timeover(){
       window.alert("Time Over!");
+      $("#endModal").modal("show");
     }
 }
 
