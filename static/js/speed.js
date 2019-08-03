@@ -14,16 +14,31 @@ window.onload = function(){
     window.drawableCanvas.event.mouse.down(mouseDownProcess);
     window.drawableCanvas.event.mouse.move(mouseMovePorcess);
 
-    function Timer(timeleft, timetotal, $element){
+    $("#startModal").modal();
+
+    $('#startGame').on("click", function(){
+      $("#startModal").modal("hide");
+      Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
+    });
+
+    function Timer(timeleft, timetotal, $element, callback){
         $element.html(timeleft%61);
         if(timeleft > 0) {
             setTimeout(function() {
-                Timer(timeleft - 1, timetotal, $element);
-            }, 1000);
+                Timer(timeleft - 1, timetotal, $element, callback);
+            },1000);
+        }
+        else{
+          setTimeout(function() {
+              callback();
+          },1000);
         }
     };
 
-    Timer(document.querySelector("#timer").innerText,document.querySelector("#timer").innerText,$('#timer'));
+    function timeover(){
+      window.alert("Time Over!");
+      $("#endModal").modal("show");
+    }
 }
 
 function mouseUpProcess(){
@@ -93,7 +108,7 @@ function setPredictAnswer() {
 
         const answerTextList = document.querySelectorAll(".answer-text");
         const answerPointList = document.querySelectorAll(".answer-point");
-        
+
         for(var i = 0; i<3; i++){
             answerTextList[i].innerText = (i+1)+". "+names[i];
             if(answerClassName === name[i]){
@@ -130,7 +145,7 @@ function success(data) {
 function findIndicesOfMax(inp, count) {
     var outp = [];
     for (var i = 0; i < inp.length; i++) {
-        outp.push(i); 
+        outp.push(i);
         if (outp.length > count) {
             outp.sort(function(a, b) {
                 return inp[b] - inp[a];
@@ -144,7 +159,7 @@ function findIndicesOfMax(inp, count) {
 function findTopValues(inp, count) {
     var outp = [];
     let indices = findIndicesOfMax(inp, count)
-    
+
     for (var i = 0; i < indices.length; i++)
         outp[i] = inp[indices[i]]
     return outp
@@ -153,9 +168,9 @@ function findTopValues(inp, count) {
 function preprocess(imgData) {
     return tf.tidy(() => {
         let tensor = tf.browser.fromPixels(imgData, numChannels = 1)
-        
+
         const resized = tf.image.resizeBilinear(tensor, [28, 28]).toFloat()
-        
+
         const offset = tf.scalar(255.0);
         const normalized = tf.scalar(1.0).sub(resized.div(offset));
 

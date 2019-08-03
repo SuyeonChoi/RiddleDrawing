@@ -44,5 +44,4 @@ function progress(timeleft, timetotal, $element) {
 };
 progress("60", "60", $('#progressBar'));
 
-
 //원그래프 CountDown
