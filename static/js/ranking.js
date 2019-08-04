@@ -2,15 +2,14 @@ function popupRankBox(data){
   if(document.querySelector('#ranking-modal') !== null){
     switchRankinModal();
     return;
-  }
-  
+  }  
   let rankingBackground = document.createElement('div');
   rankingBackground.id = 'ranking-background';
   rankingBackground.innerHTML = '<div id="ranking-wrapper" style="display:none"><div id="ranking-modal"><table id="ranking-table"><thead><tr><th colspan="2">ranking</th><th>point</th></tr></thead><tbody></tbody></table></div><div id="retry-btn">RETRY</div><div id="exit-btn">EXIT</div></div>'
   
   let tbody = rankingBackground.querySelector('tbody');
   const sortedData = sortRankData(data);
-  
+
   for(index in sortedData){
       appendRankingInTable(Number(index)+1, sortedData[index], tbody);
   }
@@ -42,7 +41,6 @@ function switchRankinModal(){
       rankingWrapper.style.display = 'none';
       document.querySelector("#ranking-background").style.backgroundColor = 'unset';
   }
-  
 }
 
 function sortRankData(data){
@@ -68,7 +66,7 @@ function getRandomData(){
       }
       return randomstring;
   }
-  
+
   function randomScore(){
       return Math.floor(Math.random() * 100)+Math.floor(Math.random() * 300)+Math.floor(Math.random() * 50);
   }
