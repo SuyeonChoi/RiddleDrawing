@@ -3,12 +3,16 @@ let coords = [];
 let classNames = [];
 let mode;
 let answerClassName;
-
+let totalPoint;
+let totalPointElement;
 window.onload = function(){
     start();
+    totalPointElement = document.querySelector("#score");
+    totalPoint = 0;
+    updateTotalPoint();
+    
     window.drawableCanvas.initialize('drawable-canvas', 400, 400);
-    window.
-    document.querySelector('#clear-btn').addEventListener('click', resetCanvas);
+    window.document.querySelector('#clear-btn').addEventListener('click', resetCanvas);
 
     window.drawableCanvas.event.mouse.up(mouseUpProcess);
     window.drawableCanvas.event.mouse.down(mouseDownProcess);
@@ -96,12 +100,42 @@ function setPredictAnswer() {
         
         for(var i = 0; i<3; i++){
             answerTextList[i].innerText = (i+1)+". "+names[i];
-            if(answerClassName === name[i]){
+            if(answerClassName === names[i]){
+                correctAnswer(i, answerPointList);
+            } else{
+                document.querySelectorAll(".answer")[i].style.color = "black";
                 answerPointList[i].innerText = "";
             }
         }
         // console.log('probs : ', probs);
     }
+}
+
+function correctAnswer(index, answerPointList){
+    let point;
+    switch(index){
+        case 0:
+            point = 20;
+            break;
+        case 1:
+            point = 10;
+            break;
+        case 2:
+            point = 5;
+            break;
+        default:
+            point = 0;
+            break;
+    }
+    document.querySelectorAll(".answer")[index].style.color = "red";
+    answerPointList[index].innerText = "+"+point;
+    window.drawableCanvas.setDrawingMode(false);
+    totalPoint += point;
+    updateTotalPoint();
+    setTimeout(function(){
+        resetDrawData();
+        resetCanvas();
+    }, 1000);
 }
 
 function getClassNames(indices) {
@@ -182,6 +216,7 @@ function getRandomClassName(){
 }
 
 function resetDrawData(){
+    window.drawableCanvas.setDrawingMode(true);
     const questionSpan = document.querySelector("#question span");
     const answerTextList = document.querySelectorAll(".answer-text");
     const answerPointList = document.querySelectorAll(".answer-point");
@@ -190,4 +225,8 @@ function resetDrawData(){
         answerTextList[i].innerText = "";
         answerPointList[i].innerText = "";
     }
+}
+
+function updateTotalPoint(){
+    totalPointElement.innerText = "Total Score : "+totalPoint+" points";
 }
