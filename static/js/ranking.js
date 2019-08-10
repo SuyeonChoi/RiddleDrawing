@@ -14,6 +14,12 @@ function popupRankBox(data){
       appendRankingInTable(Number(index)+1, sortedData[index], tbody);
   }
   document.body.appendChild(rankingBackground);
+  document.querySelector("#retry-btn").addEventListener("click", function(){
+    location.reload();     
+  });
+  document.querySelector("#exit-btn").addEventListener("click", function(){
+    location.href = "./index.html";
+  });
   switchRankinModal();
 }
 function appendRankingInTable(rank, data, tbody){
@@ -76,11 +82,4 @@ function getRandomData(){
       randomData[randomString()] = randomScore();
   }
   return randomData;
-}
-
-window.onclick = function(event){
-  console.log(event.target);
-  if(event.target == document.body){
-      switchRankinModal();
-  }
 }

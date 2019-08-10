@@ -21,8 +21,8 @@ window.onload = function(){
     $("#startModal").modal();
 
     $('#startGame').on("click", function(){
-      $("#startModal").modal("hide");
-      Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
+        $("#startModal").modal("hide");
+        Timer(document.querySelector("#timer").innerText, document.querySelector("#timer").innerText, $('#timer'), timeover);
     });
 
     function Timer(timeleft, timetotal, $element, callback){
@@ -40,10 +40,25 @@ window.onload = function(){
     };
 
     function timeover(){
-      $("#endModal").modal("show");
-      document.querySelector(".total-score div").innerText = totalPoint;
-      document.querySelector("#user-name").focus();
+        $("#endModal").modal("show");
+        document.querySelector(".total-score div").innerText = totalPoint;
     }
+
+    document.querySelector(".btn-primary").addEventListener("click", function(){
+        upload(document.querySelector("#user-name").value, totalPoint, "speed").then(function(){
+            console.log("aaaaaaa")
+            getData(popupRankBox, "speed");
+        });
+    });
+    
+    document.querySelector(".btn-danger").addEventListener("click", function(){
+        console.log("bbbbb")
+        getData(popupRankBox, "speed");
+    });
+
+    document.querySelector("#out-btn").addEventListener("click", function(){
+        location.href = "./index.html";
+    })
 }
 
 function mouseUpProcess(){

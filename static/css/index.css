@@ -50,7 +50,7 @@ html,body{
     /* font:italic  20px  Bradley Hand ITC; */
 }
 
-span{
+.div_menu span{
     border-radius: 5%;
     position: absolute;
     top: 40%;
@@ -76,4 +76,9 @@ span{
 
 p{
     margin:10;
+}
+
+.div_menu span:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px 12px 7px grey;
 }
