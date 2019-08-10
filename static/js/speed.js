@@ -47,13 +47,11 @@ window.onload = function(){
 
     document.querySelector(".btn-primary").addEventListener("click", function(){
         upload(document.querySelector("#user-name").value, totalPoint, "speed").then(function(){
-            console.log("aaaaaaa")
             getData(popupRankBox, "speed");
         });
     });
     
     document.querySelector(".btn-danger").addEventListener("click", function(){
-        console.log("bbbbb")
         getData(popupRankBox, "speed");
     });
 

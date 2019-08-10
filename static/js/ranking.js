@@ -50,15 +50,16 @@ function switchRankinModal(){
 }
 
 function sortRankData(data){
-return object2Array(data).sort(function(a, b){
-  return b[1] - a[1];
-})
+  return object2Array(data).sort(function(a, b){
+    return b[1] - a[1];
+  })
 }
 
 function object2Array(data){
-return Object.keys(data).map(function(key) {
-  return [key, data[key]];
-});
+  console.log(data);
+  return Object.keys(data).map(function(key) {
+    return [key, data[key]];
+  });
 }
 
 function getRandomData(){

@@ -160,7 +160,7 @@ p{
     font-family: 'Acme', sans-serif;
     font-size: 30px;
     width: 250px;
-    text-align: center;
+    text-align: left;
 }
 
 #input-answer:focus{

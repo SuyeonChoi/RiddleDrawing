@@ -7,12 +7,12 @@
  */
 (function() {
     function initialize(width, height){
-        createCanvas(width, height);
+        return createCanvas(width, height);
     }
 
     function drawImage(imageData, color, weight){
-        let x = canvas.width/4;
-        let y = canvas.height/4;
+        let x = canvas.width/12;
+        let y = canvas.height/12;
         let dx, dy;
         let pen_down = 0, pen_up = 1, pen_end = 0;
         let prev_pen = [pen_down, pen_up, pen_end];
@@ -28,7 +28,7 @@
             if (prev_pen[0] == 1) {
                 stroke(color);
                 strokeWeight(weight);
-                line(x, y, x+dx, y+dy);
+                line(3*x, 3*y, 3*(x+dx), 3*(y+dy));
             }
         
             x += dx;

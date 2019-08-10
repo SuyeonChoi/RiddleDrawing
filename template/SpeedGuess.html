@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +7,20 @@
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/ranking.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+  <script src="../static/js/drawable_canvas.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+  <script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/lib/sketch_rnn.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <title>Document</title>
   <link rel="stylesheet" href="../static/css/speed.css">
 </head>
@@ -22,13 +37,61 @@
             <p id="score">Total Score : 320 points</p>
         </div>
       </div>
-        <div id="draw-wrapper">
-          <div id="game-level">
-            Please Input Answer!
-          </div>
-          <div id="ai_canvas"></div>
-          <div id="answer"><input id="input-answer" type="text"></div>
+      <div id="draw-wrapper">
+        <div id="game-level">
+          Please Input Answer!
         </div>
+        <div id="ai_canvas"></div>
+        <div id="answer"><input id="input-answer" type="text"></div>
+      </div>
+      <div id="out-btn">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
+  
+    <!-- Start Modal -->
+    <div class="modal fade" id="startModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="startGame">
+          <!-- Modal Header -->
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+          <h4 class="modal-title text-center">START</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- End Modal -->
+    <div class="modal fade" id="endModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="total-score text-center">Total Score<div>320</div></h4>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body text-center">
+            Input your name : <br>
+            <input type="text" id="user-name">
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <div class="container text-center">
+              <button type="button" class="btn btn-primary btn-lg mr-4" data-dismiss="modal">SAVE</button>
+              <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">EXIT</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <script src="../static/js/creatable_canvas.js"></script>
+  <script src="../static/js/firebase.js"></script>
+  <script src="../static/js/guess.js"></script>
+  <script src="../static/js/ranking.js"></script>
 </body>
+</html>
