@@ -41,6 +41,7 @@ window.onload = function(){
 
     function timeover(){
         $("#endModal").modal("show");
+        window.drawableCanvas.setDrawingMode(false);
         document.querySelector(".total-score div").innerText = totalPoint;
     }
 
